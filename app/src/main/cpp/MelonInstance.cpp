@@ -1,3 +1,4 @@
+#include <cmath>
 #include <ctime>
 #include <chrono>
 #include <EGL/egl.h>
@@ -301,16 +302,16 @@ u32 MelonInstance::runFrame()
     int screenHeight;
     if (currentRenderer == Renderer::OpenGl)
     {
-        int scale = static_cast<GLRenderer &>(nds->GPU.GetRenderer3D()).GetScaleFactor();
-        screenWidth = 256 * scale;
-        screenHeight = (192 + 1) * scale;
+        float scale = static_cast<GLRenderer &>(nds->GPU.GetRenderer3D()).GetScaleFactor();
+        screenWidth = (int) std::lround(256.0f * scale);
+        screenHeight = (int) std::lround((192.0f + 1.0f) * scale);
     }
     else if (currentRenderer == Renderer::Compute)
     {
         auto computeRenderSettings = static_cast<ComputeRenderSettings&>(*currentConfiguration->renderSettings);
-        int scale = computeRenderSettings.scale;
-        screenWidth = 256 * scale;
-        screenHeight = (192 + 1) * scale;
+        float scale = computeRenderSettings.scale;
+        screenWidth = (int) std::lround(256.0f * scale);
+        screenHeight = (int) std::lround((192.0f + 1.0f) * scale);
     }
     else
     {

@@ -35,7 +35,7 @@ interface SettingsRepository {
     fun isJitEnabled(): Boolean
 
     fun getVideoRenderer(): Flow<VideoRenderer>
-    fun getVideoInternalResolutionScaling(): Flow<Int>
+    fun getVideoInternalResolutionScaling(): Flow<Float>
     fun getVideoFiltering(): Flow<VideoFiltering>
     fun isThreadedRenderingEnabled(): Flow<Boolean>
     fun getRenderStrategy(): Flow<RenderStrategy>

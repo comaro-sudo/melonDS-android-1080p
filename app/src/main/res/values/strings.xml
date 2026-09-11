@@ -542,6 +542,7 @@
         <item>3x native (768x576)</item>
         <item>4x native (1024x768)</item>
         <item>5x native (1280x960)</item>
+        <item>5.625x native (1440x1080, 1080p)</item>
         <item>6x native (1536x1152)</item>
         <item>7x native (1792x1344)</item>
         <item>8x native (2048x1536)</item>

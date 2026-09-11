@@ -143,9 +143,9 @@ MelonDSAndroid::FirmwareConfiguration MelonDSAndroidConfiguration::buildFirmware
 
 std::unique_ptr<MelonDSAndroid::RenderSettings> MelonDSAndroidConfiguration::buildRenderSettings(JNIEnv* env, MelonDSAndroid::Renderer renderer, jobject renderSettings) {
     jclass renderSettingsClass = env->GetObjectClass(renderSettings);
-    jmethodID getResolutionScalingMethod = env->GetMethodID(renderSettingsClass, "getResolutionScaling", "()I");
+    jmethodID getResolutionScalingMethod = env->GetMethodID(renderSettingsClass, "getResolutionScaling", "()F");
     jboolean threadedRendering = env->GetBooleanField(renderSettings, env->GetFieldID(renderSettingsClass, "threadedRendering", "Z"));
-    jint internalResolutionScaling = env->CallIntMethod(renderSettings, getResolutionScalingMethod);
+    jfloat internalResolutionScaling = env->CallFloatMethod(renderSettings, getResolutionScalingMethod);
 
     std::unique_ptr<MelonDSAndroid::RenderSettings> settings;
     if (renderer == MelonDSAndroid::Renderer::OpenGl)

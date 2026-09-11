@@ -7,11 +7,11 @@ data class RendererConfiguration(
     val videoFiltering: VideoFiltering,
     val threadedRendering: Boolean,
     val renderStrategy: RenderStrategy,
-    private val internalResolutionScaling: Int,
+    private val internalResolutionScaling: Float,
 ) {
 
     val resolutionScaling get() = when (renderer) {
-        VideoRenderer.SOFTWARE -> 1
+        VideoRenderer.SOFTWARE -> 1f
         VideoRenderer.OPENGL -> internalResolutionScaling
         VideoRenderer.COMPUTE -> internalResolutionScaling
     }

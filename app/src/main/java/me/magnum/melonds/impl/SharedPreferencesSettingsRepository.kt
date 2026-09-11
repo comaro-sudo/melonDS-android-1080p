@@ -293,10 +293,10 @@ class SharedPreferencesSettingsRepository(
         }
     }
 
-    override fun getVideoInternalResolutionScaling(): Flow<Int> {
+    override fun getVideoInternalResolutionScaling(): Flow<Float> {
         return getOrCreatePreferenceSharedFlow("video_internal_resolution") {
             val internalResolutionPreference = preferences.getString("video_internal_resolution", "1")!!
-            internalResolutionPreference.toIntOrNull() ?: 1
+            internalResolutionPreference.toFloatOrNull() ?: 1f
         }
     }
 

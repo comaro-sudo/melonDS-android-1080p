@@ -537,6 +537,7 @@
         <item>3x (768x576)</item>
         <item>4x (1024x768)</item>
         <item>5x (1280x960)</item>
+        <item>5.625x (1440x1080, 1080p)</item>
         <item>6x (1536x1152)</item>
         <item>7x (1792x1344)</item>
         <item>8x (2048x1536)</item>

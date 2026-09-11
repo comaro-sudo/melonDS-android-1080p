@@ -19,12 +19,12 @@ struct SoftwareRenderSettings : public RenderSettings
 struct OpenGlRenderSettings : public RenderSettings
 {
     bool betterPolygons;
-    int scale;
+    float scale;
 };
 
 struct ComputeRenderSettings : public RenderSettings
 {
-    int scale;
+    float scale;
     bool highResCoordinates;
 };
 
